@@ -12,9 +12,9 @@ class AboutApply extends KoanSuite {
 
     var a = new Counter(10)
     a = a.apply(20)
-    a.seed should be (__)
+    a.seed should be (30)
     a = a(40) //Whoa! Look Ma! No apply!
-    a.seed should be (__)
+    a.seed should be (70)
   }
 
   koan("""The apply method can also be used in singleton objects as well, in fact, it is the most common way
@@ -25,9 +25,9 @@ class AboutApply extends KoanSuite {
         def apply(firstName:String, lastName:String) = new Employee(firstName, lastName)
     }
 
-    var a = Employee.apply("Aleksander", "Neufied")
-    a.firstName should be (__)
+    val a = Employee.apply("Aleksander", "Neufied")
+    a.firstName should be ("Aleksander")
     val b = Employee("Jamie", "Pindar")
-    a.lastName should be (__)
+    b.lastName should be ("Pindar")
   }
 }
