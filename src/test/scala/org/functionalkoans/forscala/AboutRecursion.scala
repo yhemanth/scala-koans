@@ -21,10 +21,10 @@ class AboutRecursion extends KoanSuite {
       fact(i, 1)
     }
 
-    factorial(0) should be(__)
-    factorial(1) should be(__)
-    factorial(2) should be(__)
-    factorial(3) should be(__)
+    factorial(0) should be(1)
+    factorial(1) should be(1)
+    factorial(2) should be(2)
+    factorial(3) should be(6)
   }
 
   koan(
@@ -42,7 +42,9 @@ class AboutRecursion extends KoanSuite {
     }
 
     //Reminder fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21
-    fibonacci(4) should be(__)
+    val fib: Int = fibonacci(4)
+    println(fib)
+    fib should be(5)
   }
 
   koan(
@@ -53,13 +55,15 @@ class AboutRecursion extends KoanSuite {
     def fibonacci(n: Int) = {
       @tailrec
       def fib(n: Int, b: Int, a: Int): Int = n match {
-        case 0 => a
+        case 0 => b
         case _ => fib(n - 1, a + b, b)
       }
 
       fib(n, 1, 0)
     }
     //Reminder fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21
-    fibonacci(4) should be(__)
+    val fib: Int = fibonacci(4)
+    println("tailrec: " + fib)
+    fib should be(5)
   }
 }
