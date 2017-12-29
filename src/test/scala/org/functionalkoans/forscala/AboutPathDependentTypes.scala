@@ -24,6 +24,7 @@ class AboutPathDependentTypes extends KoanSuite {
     // Next line doesn't compile, uncomment to try, then comment and answer the koan next
     //    b1.occupied += c2
 
-    c1.x should be (__)
+    println(c1.x)
+    c1.x should be (15)
   }
 }
